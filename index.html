@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>helmutschneider.github.io</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"
+        integrity="sha512-KUoB3bZ1XRBYj1QcH4BHCQjurAZnCO3WdrswyLDtp7BMwCw7dPZngSLqILf68SGgvnWHTD5pPaYrXi6wiRJ65g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #content {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media (max-width: 767px) {
+            #content {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body class="markdown-body">
+    <div id="content"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.2/marked.min.js"
+        integrity="sha512-hzyXu3u+VDu/7vpPjRKFp9w33Idx7pWWNazPm+aCMRu26yZXFCby1gn1JxevVv3LDwnSbyKrvLo3JNdi4Qx1ww=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+    <script type="text/plain" id="md">
+# Welcome!
+
+My name is Johan Björk and you have arrived at my résumé. I was born in 1991
+and have been interested in software for most of my life. Software and automation
+fascinates me; it can help us build cool stuff but it's mainly a huge time-saver
+for boring and tedious tasks. Today I work as a self-employed computer programmer.
+
+I am not entirely self-taught but 95% of what I know has been learnt by doing. I
+value independence, accountability and pragmatic solutions. I'm a fan of compiled
+languages, strong type systems and good error messages. I aim for my code to be readable,
+well commented and tested (when that's a requirement). Long function and argument
+names make me smile.
+
+My professional experience is fairly wide and I would consider myself a generalist. Most
+of my time over the last 10 years has been spent writing C#, PHP, TypeScript and SQL. I
+am well-versed in Linux and Windows but I prefer to develop on MacOS. My view of operating
+systems and programming languages is that they are merely tools - a good programmer should
+be able to use whatever is necessary to deliver value.
+
+In my spare time I enjoy playing badminton, cycling, cooking and playing the occasional
+platforming video game. I'm a huge fan of chocolate and black liquorice. I live in the
+Stockholm area. You may contact me at "**johan** at **imp** dot **pm**".
+
+## Professional experience
+
+- 2017-2021: Lead developer at the logistics firm YSDS AB. Me and my team developed and
+maintanted an appplication for placing orders, tracking packages, invoicing and accounting.
+
+- 2014-2017: Developer at Vinnia AB. I worked as a sub-contractor for this small firm
+with a wide variety of customers. During my time here I built a time management application,
+a couple of integrations with Upsales, Fortnox, Milltime and more.
+
+- 2014-today: Developer at Reduca AB. Developed an application for housing
+cooperatives (swedish "bostadsrättsförening") from the ground up. The application includes
+document management, event scheduling, reminders, polls, electronic document signatures,
+a meeting wizard and much more. This is a recurring customer of mine so I still work with them
+from time to time.
+
+- 2010-2012: Developer at Karl Björks Förlag HB. I built an application with order & invoice
+management for a small publishing company. The application is still used today.
+
+## Hobby projects
+
+- [CHIP8 interpreter in Kotlin](https://github.com/helmutschneider/chip8-kotlin)
+- [Swish client in PHP](https://github.com/helmutschneider/swish-php)
+- [JSON parsers in 6 languages](https://github.com/helmutschneider/json)
+- [Brainfuck intepreter in Rust](https://github.com/helmutschneider/brainfuck)
+
+See [my github](https://github.com/helmutschneider) for more.
+
+## Education
+- 2011-2014: KTH Royal Institute of Technology, mechanical engineering
+- 2007-2010: Blackebergs gymnasium
+
+## Spoken languages
+- Swedish
+- English
+
+Updated at: 2022-01-17
+
+</script>
+
+    <script>
+        var source = document.getElementById('md')
+            .innerText
+            .trim();
+        document.getElementById('content').innerHTML = marked.parse(source);
+    </script>
+</body>
+
+</html>
