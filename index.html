@@ -5,10 +5,7 @@
     <meta charset="utf-8" />
     <title>Résumé Johan Björk</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"
-        integrity="sha512-KUoB3bZ1XRBYj1QcH4BHCQjurAZnCO3WdrswyLDtp7BMwCw7dPZngSLqILf68SGgvnWHTD5pPaYrXi6wiRJ65g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.4.0/github-markdown.min.css" integrity="sha512-30lMQ13MJJk66BfdlnvVnKmP05V7Qt1g6sHyYigDgV8i9M2ENAsXk1U4dVvKUYB6pqb2bVhoxhZsYK08hQpS+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         #content {
             box-sizing: border-box;
@@ -28,10 +25,7 @@
 
 <body class="markdown-body">
     <div id="content"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.2/marked.min.js"
-        integrity="sha512-hzyXu3u+VDu/7vpPjRKFp9w33Idx7pWWNazPm+aCMRu26yZXFCby1gn1JxevVv3LDwnSbyKrvLo3JNdi4Qx1ww=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.5/marked.min.js" integrity="sha512-4jnDttU14uoo9NlKf2foGssydpsxUDtUj9sWhUqm1taDjQoBY30pgrSk2f9GS43SZELyTVvPODb03GlUPvd5SA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/plain" id="md">
 # Welcome!
 
@@ -57,6 +51,11 @@ platforming video game. I'm a huge fan of chocolate and black liquorice. I live 
 Stockholm area. You may contact me at "**johan** at **imp** dot **pm**".
 
 ## Professional experience
+
+- 2023: Developer at the consulting firm Indpro AB. I worked in a senior role to ensure
+that performance, reliability and code quality was up-to-par by industry standards. The
+tech stacks were varied; most of my code was written in TypeScript and Java. Postgres and MySQL
+were used on the database side.
 
 - 2022-2023: Developer at DNB Finance ASA. I developed and maintained an application
 for car financing at this large european bank. My tasks were varied but mainly focused
@@ -97,12 +96,12 @@ See [my github](https://github.com/helmutschneider) for more.
 - Swedish
 - English
 
-Updated at: 2023-01-14
+Updated at: 2023-11-07
 
 </script>
 
     <script>
-        var source = document.getElementById('md')
+        const source = document.getElementById('md')
             .innerText
             .trim();
         document.getElementById('content').innerHTML = marked.parse(source);
