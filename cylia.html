@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>gissa cylias namn</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+    integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    html,
+    body {
+      font-family: 'Comic Sans MS', Helvetica, Arial, sans-serif;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .spin {
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-warning">
+  <div class="container text-center pt-3">
+    <h1 class="mb-3">
+      <span class="d-inline-block spin">🤔</span> gissa cylias namn <span class="d-inline-block spin">🤔</span>
+    </h1>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="mb-3">
+          <input class="form-control form-control-lg text-center" type="text" placeholder="Skriv namn..." />
+        </div>
+        <div class="mb-3">
+          <ul class="list-group"></ul>
+        </div>
+        <h1><span class="d-inline-block spin">🤔</span></h1>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const list = document.querySelector('ul');
+    const input = document.querySelector('input');
+    const expansions = {
+      '0': ['noll'],
+      '1': ['en', 'ett'],
+      '2': ['två'],
+      '3': ['tre'],
+      '4': ['fyra'],
+      '5': ['fem'],
+      '6': ['sex'],
+      '7': ['sju'],
+      '8': ['åtta'],
+      '9': ['nio'],
+    };
+    const colors = [
+      'bg-primary',
+      'bg-secondary',
+      'bg-success',
+      'bg-danger',
+      'bg-info',
+      'bg-dark',
+    ];
+
+     /**
+     * @param {string} value
+     */
+    function expand(value) {
+      const looksLikeUppercase = /^[A-Z0-9]+$/.test(value);
+      const chunks = [];
+
+      for (let i = 0; i < value.length; ++i) {
+        const ch = value.charAt(i);
+        const exp = expansions[ch] || [ch];
+        chunks.push(exp);
+      }
+
+      let result = [''];
+      let chunk;
+
+      while (chunk = chunks.shift()) {
+        let next = [];
+
+        for (const ch of chunk) {
+          for (const r of result) {
+            if (looksLikeUppercase) {
+              next.push(r + ch.toUpperCase());
+            } else {
+              next.push(r + ch);
+            }
+          }
+        }
+
+        result = next;
+      }
+      
+      return result;
+    }
+
+    /**
+     * @param {string} value
+     */
+    function render(value) {
+      const result = expand(value);
+      result.sort();
+
+      const fragment = document.createDocumentFragment();
+
+      for (let i = 0; i < result.length; ++i) {
+        const name = result[i];
+
+        if (!name) {
+          continue;
+        }
+
+        const li = document.createElement('li');
+        li.className = 'list-group-item';
+        li.classList.add('list-group-item');
+        li.classList.add('text-white')
+        li.classList.add(colors[i % colors.length]);
+        li.innerText = name;
+        fragment.appendChild(li);
+      }
+
+      list.innerHTML = '';
+      list.appendChild(fragment);
+    }
+
+    input.addEventListener('input', (event) => {
+      render(event.target.value.trim());
+    });
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      input.focus();
+      input.value = '1DAR1AS11';
+      input.setSelectionRange(input.value.length, input.value.length);
+      render(input.value);
+    });
+  </script>
+</body>
+
+</html>
